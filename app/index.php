@@ -10,7 +10,7 @@ use Illuminate\Database\Capsule\Manager as Capsule;
 
 
 require __DIR__ . '/../vendor/autoload.php';
-require_once './middlewares/CorsMiddleware.php';
+require_once './Middleware/CorsMiddleware.php';
 require_once './controllers/UsuarioController.php';
 require_once './controllers/PersonajeController.php';
 require_once './controllers/PlantaController.php';
