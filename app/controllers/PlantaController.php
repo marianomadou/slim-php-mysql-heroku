@@ -29,16 +29,10 @@ class PlantaController implements IApiUsable
 
   public function TraerUno($request, $response, $args)
   {
-    // Buscamos usuario por nombre
-    $usr = $args['usuario'];
+    $planta_id = $args['id'];
+    $planta = Planta::find($planta_id);
 
-    // Buscamos por primary key
-    // $usuario = Usuario::find($usr);
-
-    // Buscamos por attr usuario
-    $usuario = Planta::where('usuario', $usr)->first();
-
-    $payload = json_encode($usuario);
+    $payload = json_encode($planta);
 
     $response->getBody()->write($payload);
     return $response
