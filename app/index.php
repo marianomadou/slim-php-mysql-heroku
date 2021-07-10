@@ -49,6 +49,10 @@ $capsule->bootEloquent();
 
 
 // Routes
+$app->group('/resources/images', function (RouteCollectorProxy $group) {
+  $group->get('[/]', \PlantaController::class . ':TraerTodos');
+  $group->get('/{id}', \PlantaController::class . ':TraerUno');
+  });
 
   $app->group('/plantas', function (RouteCollectorProxy $group) {
     $group->get('[/]', \PlantaController::class . ':TraerTodos');
