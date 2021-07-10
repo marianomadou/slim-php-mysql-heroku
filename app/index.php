@@ -13,6 +13,7 @@ require __DIR__ . '/../vendor/autoload.php';
 
 require_once './controllers/UsuarioController.php';
 require_once './controllers/PersonajeController.php';
+require_once './controllers/PlantaController.php';
 
 // Load ENV
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
