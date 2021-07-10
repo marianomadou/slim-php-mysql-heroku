@@ -7,11 +7,10 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\Factory\AppFactory;
 use Slim\Routing\RouteCollectorProxy;
 use Illuminate\Database\Capsule\Manager as Capsule;
-use \App\Middleware\CorsMiddleware as CorsMiddleware; 
 
 
 require __DIR__ . '/../vendor/autoload.php';
-
+require_once './middlewares/CorsMiddleware.php';
 require_once './controllers/UsuarioController.php';
 require_once './controllers/PersonajeController.php';
 require_once './controllers/PlantaController.php';
