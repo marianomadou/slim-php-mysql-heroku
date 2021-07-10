@@ -1,10 +1,10 @@
 <?php
-require_once './models/Usuario.php';
+require_once './models/Personaje.php';
 require_once './interfaces/IApiUsable.php';
 
-use \App\Models\Usuario as Usuario;
+use \App\Models\Personaje as Personaje;
 
-class UsuarioController implements IApiUsable
+class PersonajeController implements IApiUsable
 {
 
   public function CargarUno($request, $response, $args)
@@ -15,7 +15,7 @@ class UsuarioController implements IApiUsable
     $clave = $parametros['clave'];
 
     // Creamos el usuario
-    $usr = new Usuario();
+    $usr = new Personaje();
     $usr->usuario = $usuario;
     $usr->clave = $clave;
     $usr->save();
@@ -36,7 +36,7 @@ class UsuarioController implements IApiUsable
     // $usuario = Usuario::find($usr);
 
     // Buscamos por attr usuario
-    $usuario = Usuario::where('usuario', $usr)->first();
+    $usuario = Personaje::where('usuario', $usr)->first();
 
     $payload = json_encode($usuario);
 
@@ -47,7 +47,7 @@ class UsuarioController implements IApiUsable
 
   public function TraerTodos($request, $response, $args)
   {
-    $lista = Usuario::all();
+    $lista = Personaje::all();
     $payload = json_encode(array("listaUsuario" => $lista));
 
     $response->getBody()->write($payload);
@@ -63,7 +63,7 @@ class UsuarioController implements IApiUsable
     $usuarioId = $args['id'];
 
     // Conseguimos el objeto
-    $usr = Usuario::where('id', '=', $usuarioId)->first();
+    $usr = Personaje::where('id', '=', $usuarioId)->first();
 
     // Si existe
     if ($usr !== null) {
@@ -85,7 +85,7 @@ class UsuarioController implements IApiUsable
   {
     $usuarioId = $args['id'];
     // Buscamos el usuario
-    $usuario = Usuario::find($usuarioId);
+    $usuario = Personaje::find($usuarioId);
     // Borramos
     $usuario->delete();
 
