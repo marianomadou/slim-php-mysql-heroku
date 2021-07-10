@@ -46,20 +46,14 @@ $capsule->bootEloquent();
 
 
 // Routes
-$app->group('/usuarios', function (RouteCollectorProxy $group) {
-    $group->get('[/]', \UsuarioController::class . ':TraerTodos');
-    $group->get('/{usuario}', \UsuarioController::class . ':TraerUno');
-    $group->post('[/]', \UsuarioController::class . ':CargarUno');
-    $group->put('/{id}', \UsuarioController::class . ':ModificarUno');
-    $group->delete('/{id}', \UsuarioController::class . ':BorrarUno');
-  });
 
-  $app->group('/personajes', function (RouteCollectorProxy $group) {
-    $group->get('[/]', \PersonajeController::class . ':TraerTodos');
-    $group->get('/{usuario}', \PersonajeController::class . ':TraerUno');
-    $group->post('[/]', \PersonajeController::class . ':CargarUno');
-    $group->put('/{id}', \PersonajeController::class . ':ModificarUno');
-    $group->delete('/{id}', \PersonajeController::class . ':BorrarUno');
+  $app->group('/plantas', function (RouteCollectorProxy $group) {
+    $group->get('[/]', \PlantaController::class . ':TraerTodos');
+    $group->get('/{id}', \PlantaController::class . ':TraerUno');
+    $group->get('/{id}', \PlantaController::class . ':TraerUno');
+    $group->post('[/]', \PlantaController::class . ':CargarUno');
+    $group->put('/{id}', \PlantaController::class . ':ModificarUno');
+    $group->delete('/{id}', \PlantaController::class . ':BorrarUno');
   });
 
 $app->get('[/]', function (Request $request, Response $response) {    
