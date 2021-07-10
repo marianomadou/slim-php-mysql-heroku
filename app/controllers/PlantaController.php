@@ -25,7 +25,7 @@ class PlantaController implements IApiUsable
     $response->getBody()->write($payload);
     return $response
       ->withHeader('Content-Type', 'application/json')
-      ->withHeader('Access-Control-Allow-Origin', 'https://pvz2.herokuapp.com/')
+      ->withHeader('Access-Control-Allow-Origin', '*')
       ->withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization')
       ->withHeader('Access-Control-Allow-Methods', 'GET');
   }
@@ -39,7 +39,10 @@ class PlantaController implements IApiUsable
 
     $response->getBody()->write($payload);
     return $response
-      ->withHeader('Content-Type', 'application/json');
+      ->withHeader('Content-Type', 'application/json')
+      ->withHeader('Access-Control-Allow-Origin', '*')
+      ->withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization')
+      ->withHeader('Access-Control-Allow-Methods', 'GET');
   }
 
   public function TraerTodos($request, $response, $args)
