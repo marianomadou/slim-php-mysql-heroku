@@ -7,6 +7,7 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\Factory\AppFactory;
 use Slim\Routing\RouteCollectorProxy;
 use Illuminate\Database\Capsule\Manager as Capsule;
+use \App\Middleware\CorsMiddleware as CorsMiddleware; 
 
 
 require __DIR__ . '/../vendor/autoload.php';
@@ -23,7 +24,7 @@ $dotenv->safeLoad();
 $app = AppFactory::create();
 
 // Add error middleware
-$app->add(\App\Middleware\CorsMiddleware::class);
+$app->add(CorsMiddleware::class);
 
 $app->addErrorMiddleware(true, true, true);
 $app->addBodyParsingMiddleware();
