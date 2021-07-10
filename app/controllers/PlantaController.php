@@ -48,7 +48,7 @@ class PlantaController implements IApiUsable
   public function TraerTodos($request, $response, $args)
   {
     $lista = Planta::all();
-    $payload = json_encode(array($lista));
+    $payload = json_encode($lista);
 
     $response->getBody()->write($payload);
     return $response
