@@ -23,7 +23,7 @@ $dotenv->safeLoad();
 $app = AppFactory::create();
 
 // Add error middleware
-$app->add(\App\Middlewares\CorsMiddleware::class);
+$app->add(\App\Middleware\CorsMiddleware::class);
 
 $app->addErrorMiddleware(true, true, true);
 $app->addBodyParsingMiddleware();
