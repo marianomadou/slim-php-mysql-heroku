@@ -1,5 +1,5 @@
 <?php
-require_once './models/Planta.php';
+require_once './models/Music.php';
 require_once './interfaces/IApiUsable.php';
 
 use \App\Models\Music as Music;
