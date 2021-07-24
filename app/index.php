@@ -14,7 +14,7 @@ require_once './Middleware/CorsMiddleware.php';
 require_once './controllers/UsuarioController.php';
 require_once './controllers/PersonajeController.php';
 require_once './controllers/PlantaController.php';
-
+require_once './controllers/MusicController.php';
 // Load ENV
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->safeLoad();
@@ -54,7 +54,7 @@ $app->group('/resources/images', function (RouteCollectorProxy $group) {
   $group->get('/{id}', \PlantaController::class . ':TraerUno');
   });
 
-  $app->group('/resources/music', function (RouteCollectorProxy $group) {
+  $app->group('/music', function (RouteCollectorProxy $group) {
     $group->get('/{id}', \MusicController::class . ':TraerUno');
     $group->get('[/]', \MusicController::class . ':TraerTodos');
     });
