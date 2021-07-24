@@ -55,7 +55,8 @@ $app->group('/resources/images', function (RouteCollectorProxy $group) {
   });
 
   $app->group('/resources/music', function (RouteCollectorProxy $group) {
-    $group->get('/{id}', \PlantaController::class . ':TraerUno');
+    $group->get('/{id}', \MusicController::class . ':TraerUno');
+    $group->get('[/]', \MusicController::class . ':TraerTodos');
     });
 
   $app->group('/plantas', function (RouteCollectorProxy $group) {

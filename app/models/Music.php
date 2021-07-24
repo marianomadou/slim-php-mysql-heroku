@@ -13,5 +13,6 @@ class Music extends Model
     public $timestamps = false;
  
     protected $fillable = [
+        'ubicacion'
     ];
 }
